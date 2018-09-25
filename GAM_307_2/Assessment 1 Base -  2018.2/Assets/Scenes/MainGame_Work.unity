@@ -1574,6 +1574,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11497474, guid: 60f2aebb7f6f4bb43b5f4d6c35721772, type: 2}
+      propertyPath: cameraRig
+      value: 
+      objectReference: {fileID: 1012007519}
+    - target: {fileID: 11497474, guid: 60f2aebb7f6f4bb43b5f4d6c35721772, type: 2}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1002407392}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60f2aebb7f6f4bb43b5f4d6c35721772, type: 2}
   m_IsPrefabParent: 0
@@ -3451,6 +3459,26 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 995792169}
   m_Mesh: {fileID: 4300004, guid: ac3b0f44d1f6eba4788fa135a9750d68, type: 3}
+--- !u!1 &1002407391 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 102272, guid: 2500ab921dfedd146946b559b66274fd, type: 2}
+  m_PrefabInternal: {fileID: 1020076485}
+--- !u!4 &1002407392 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 407224, guid: 2500ab921dfedd146946b559b66274fd, type: 2}
+  m_PrefabInternal: {fileID: 1020076485}
+--- !u!45 &1002407393
+Skybox:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1002407391}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: e9705e00f62f62849b89fc9fd55aa0e3, type: 2}
+--- !u!4 &1012007519 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 421058, guid: 2500ab921dfedd146946b559b66274fd, type: 2}
+  m_PrefabInternal: {fileID: 1020076485}
 --- !u!1001 &1020076485
 Prefab:
   m_ObjectHideFlags: 0
