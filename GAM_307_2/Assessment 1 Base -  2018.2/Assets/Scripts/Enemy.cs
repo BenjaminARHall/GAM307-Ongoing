@@ -48,6 +48,7 @@ public class Enemy : MonoBehaviour {
 			{
 				StopCoroutine(turnTowardsPlayerCoroutine);
 				StopCoroutine(moveTowardsPlayerCoroutine);
+                animatorComponent.SetTrigger("Idle");
 			}
 		}
 	}
@@ -61,6 +62,8 @@ public class Enemy : MonoBehaviour {
 
 		isDead = true;
 
+        animatorComponent.SetTrigger("Die");
+
 		StopCoroutine (turnTowardsPlayerCoroutine);
 		StopCoroutine (moveTowardsPlayerCoroutine);
 
@@ -69,6 +72,7 @@ public class Enemy : MonoBehaviour {
 
 	private IEnumerator TurnTowardsPlayer(Transform player)
 	{
+        animatorComponent.SetTrigger("Walk");
 		while (true)
 		{
 			Quaternion targetRotation = Quaternion.LookRotation(player.position - transform.position, Vector3.up);
