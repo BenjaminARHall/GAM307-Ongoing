@@ -12,10 +12,26 @@ public class Coin : MonoBehaviour {
     [SerializeField]
     private float movementDistance = 0.5f; //coins movement distance
 
+    [SerializeField]
+    private GameObject collectCoinEffect; //the particle effect will instantiate on pickup
+
     private float startingY; //coins Y starting position gives us a value so we know how far it strays from inital position 
     private bool isMovingUp = true; // 
 
+ void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            Pickup();
+        }
+    }
 
+    private void Pickup()
+    {
+        GameManager.Instance.NumCoins++;
+        Instantiate(collectCoinEffect, transform.position, transform.rotation);
+        Destroy(gameObject);
+    }
     // Use this for initialization
     void Start() {
         //StartCoroutine(Spin ());
@@ -59,6 +75,5 @@ public class Coin : MonoBehaviour {
           //  yield return 0;
         
     }
-	
-	
+   
 }

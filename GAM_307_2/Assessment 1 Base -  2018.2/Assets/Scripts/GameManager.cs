@@ -6,7 +6,16 @@ public class GameManager : Singleton<GameManager> {
 
     private float _timeRemaining;
 
-    private float maxTime = 2 * 60; //in seconds
+ private float maxTime = 2 * 60; //in seconds
+
+    private int _numCoins;
+
+    public int NumCoins
+    {
+        get { return _numCoins; }
+        set { _numCoins = value; }
+    }
+   
 
     public float TimeRemaining
     {
