@@ -12,6 +12,10 @@ public class GameManager : Singleton<GameManager> {
 
     private bool isInvulnerable = false;
 
+    private int totalCoinsInLevel;
+
+    private bool gameOver = false;
+
     private int _numCoins;
 
     public int NumCoins
@@ -49,6 +53,8 @@ public class GameManager : Singleton<GameManager> {
     void Start () {
         TimeRemaining = maxTime;
         PlayerHealth = maxHealth;
+
+        totalCoinsInLevel = GameObject.FindGameObjectsWithTag("Coin").Length;
 	}
 	
 	// Update is called once per frame
@@ -58,6 +64,11 @@ public class GameManager : Singleton<GameManager> {
         if (TimeRemaining <= 0)
         {
             Restart();
+        }
+
+        if (_numCoins == totalCoinsInLevel && !gameOver)
+        {
+            StartCoroutine (WonGame());
         }
     
 	}
@@ -87,6 +98,7 @@ public class GameManager : Singleton<GameManager> {
             Application.LoadLevel(Application.loadedLevel);
             TimeRemaining = maxTime;
             PlayerHealth = maxHealth;
+            NumCoins = 0;
         }
     }
 
@@ -100,5 +112,13 @@ public class GameManager : Singleton<GameManager> {
     public float GetPlayerHealthPercentage()
     {
         return PlayerHealth / (float)maxHealth;
+    }
+
+    private IEnumerator WonGame()
+    {
+        gameOver = true;
+        FindObjectOfType<UpdateUI>().wonGamePanel.SetActive(true);
+        yield return new WaitForSeconds(3);
+        GameManager.Instance.Restart();
     }
 }

@@ -14,6 +14,8 @@ public class UpdateUI : MonoBehaviour {
     [SerializeField]
     private Text healthLabel;
 
+    public GameObject wonGamePanel;
+
 	// Use this for initialization
 	void Start () {
 		
