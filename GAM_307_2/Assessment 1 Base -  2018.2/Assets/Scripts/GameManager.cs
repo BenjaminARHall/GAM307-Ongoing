@@ -10,6 +10,8 @@ public class GameManager : Singleton<GameManager> {
 
     private int maxHealth = 5;
 
+    private bool isInvulnerable = false;
+
     private int _numCoins;
 
     public int NumCoins
@@ -62,6 +64,14 @@ public class GameManager : Singleton<GameManager> {
 
     private void DecrementPlayerHealth (GameObject player)
     {
+
+        if (isInvulnerable)
+        {
+            return;
+        }
+
+        StartCoroutine(InvulnerableDelay ());
+
         PlayerHealth--;
 
         if (PlayerHealth <= 0)
@@ -78,5 +88,17 @@ public class GameManager : Singleton<GameManager> {
             TimeRemaining = maxTime;
             PlayerHealth = maxHealth;
         }
+    }
+
+    private IEnumerator InvulnerableDelay ()
+    {
+        isInvulnerable = true;
+        yield return new WaitForSeconds(1.0f);
+        isInvulnerable = false;
+    }
+
+    public float GetPlayerHealthPercentage()
+    {
+        return PlayerHealth / (float)maxHealth;
     }
 }
