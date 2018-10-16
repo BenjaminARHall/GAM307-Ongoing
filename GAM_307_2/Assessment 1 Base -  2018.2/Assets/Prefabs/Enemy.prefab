@@ -1119,6 +1119,8 @@ MonoBehaviour:
   movementSpeed: 4
   meshRadius: 1
   animatorComponent: {fileID: 9593408}
+  DeathEnemy: {fileID: 198259551233593386, guid: 6fe2a38ecac7ea0428d77143e6bf31e5,
+    type: 2}
   isDead: 0
 --- !u!137 &13769256
 SkinnedMeshRenderer:

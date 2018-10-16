@@ -15,6 +15,9 @@ public class Enemy : MonoBehaviour {
 	[SerializeField]
 	private Animator animatorComponent;
 
+    [SerializeField]
+    public ParticleSystem DeathEnemy;
+
 	private IEnumerator turnTowardsPlayerCoroutine;
 	private IEnumerator moveTowardsPlayerCoroutine;
 
@@ -52,7 +55,7 @@ public class Enemy : MonoBehaviour {
 			}
 		}
 	}
-
+//play particle effect on death
 	void OnDeath()
 	{
 		if (isDead)
@@ -66,7 +69,8 @@ public class Enemy : MonoBehaviour {
 
 		StopCoroutine (turnTowardsPlayerCoroutine);
 		StopCoroutine (moveTowardsPlayerCoroutine);
-
+        ParticleSystem deathEnemy = Instantiate(DeathEnemy);
+        deathEnemy.transform.position = transform.position;
 		Destroy (gameObject, 3f);
 	}
 
