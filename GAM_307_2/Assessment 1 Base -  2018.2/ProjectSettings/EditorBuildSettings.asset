@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MainGame.unity
     guid: dbeab58e7e02b6d4cb76ea20d11c3039
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainGame_Work.unity
     guid: 612982368e73dfd4cadf271db3ea979a
+  - enabled: 1
+    path: Assets/Scenes/A1_Benjamin_Hall.unity
+    guid: f24a81bd42c711b40a239edfaec67990
   m_configObjects: {}
