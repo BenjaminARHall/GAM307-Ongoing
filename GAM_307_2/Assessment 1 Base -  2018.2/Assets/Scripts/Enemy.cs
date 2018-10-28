@@ -18,12 +18,17 @@ public class Enemy : MonoBehaviour {
     [SerializeField]
     public ParticleSystem DeathEnemy;
 
+    
+   
+
 	private IEnumerator turnTowardsPlayerCoroutine;
 	private IEnumerator moveTowardsPlayerCoroutine;
 
 	public bool isDead = false;
 
-	void OnTriggerEnter(Collider collider)
+   
+
+    void OnTriggerEnter(Collider collider)
 	{
 		if (collider.gameObject.tag == "Player" && !isDead)
 		{

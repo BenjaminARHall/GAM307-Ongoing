@@ -6,7 +6,6 @@ public class DamagePlayerEvent : MonoBehaviour {
 
     public delegate void DamagePlayerAction(GameObject player);
     public static event DamagePlayerAction OnDamagePlayer;
-
     private void OnTriggerEnter(Collider collider)
     {
         if (!GetComponentInParent<Enemy> () .isDead)

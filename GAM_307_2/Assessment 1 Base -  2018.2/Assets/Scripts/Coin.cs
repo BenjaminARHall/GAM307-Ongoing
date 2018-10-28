@@ -14,7 +14,8 @@ public class Coin : MonoBehaviour {
 
     [SerializeField]
     private GameObject collectCoinEffect; //the particle effect will instantiate on pickup
-
+    [SerializeField]
+     
     private float startingY; //coins Y starting position gives us a value so we know how far it strays from inital position 
     private bool isMovingUp = true; // 
 
